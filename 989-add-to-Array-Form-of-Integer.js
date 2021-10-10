@@ -30,3 +30,8 @@ var addToArrayForm = function (num, k) {
   res.reverse();
   return res;
 };
+
+/**
+ * 参考
+ * https://blog.csdn.net/weixin_38289787/article/details/120684335
+ */
