@@ -16,3 +16,13 @@ var maxSubArray = function (nums) {
   }
   return max;
 };
+
+var maxSubArray = function (nums) {
+  let pre = 0, // 保存遍历过程中较大值
+    max = nums[0]; // 保存最大值
+  nums.forEach((x) => {
+    pre = Math.max(pre + x, x);
+    max = Math.max(pre, max);
+  });
+  return max;
+};
