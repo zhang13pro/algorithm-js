@@ -16,7 +16,7 @@ var reverseWords = function (s) {
 
 // 正则
 var reverseWords = function (s) {
-  // TODO 匹配特殊字符
+  // TODO 匹配特殊字符 /[\w']+g/
   let arr = s.match(/.+|\w+/g);
   let arrResult = arr.map((item) => {
     return item.split("").reverse().join("");
