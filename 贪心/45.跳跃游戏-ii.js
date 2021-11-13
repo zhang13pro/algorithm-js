@@ -10,15 +10,18 @@
  * @return {number}
  */
 var jump = function (nums) {
-  let len = nums.length - 1,
-    curr = -1,
+  let target = nums.length - 1,
     next = 0,
-    sum = 0;
-
-  for (let i = 0; next < len; i++) {
-    if (i > curr) sum++, (curr = next);
+    curr = -1,
+    ans = 0;
+  // 注意循环判定条件
+  for (let i = 0; next < target; i++) {
+    if (i > curr) {
+      ans++;
+      curr = next;
+    }
     next = Math.max(next, nums[i] + i);
   }
-  return sum;
+  return ans;
 };
 // @lc code=end

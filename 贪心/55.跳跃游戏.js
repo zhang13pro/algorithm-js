@@ -10,17 +10,18 @@
  * @return {boolean}
  */
 var canJump = function (nums) {
-  let index = 0,
-    max = 0,
-    target = nums.length - 1;
+  let max = 0,
+    target = nums.length - 1,
+    index = 0;
 
   while (index < nums.length) {
     max = Math.max(max, index + nums[index]);
-
-    if (max >= target) return true;
-
-    if (max <= index && nums[index] === 0) return false;
-
+    if (max >= target) {
+      return true;
+    }
+    if (max <= index && nums[index] === 0) {
+      return false;
+    }
     index++;
   }
   return false;
