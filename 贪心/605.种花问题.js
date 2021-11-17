@@ -11,17 +11,18 @@
  * @return {boolean}
  */
 var canPlaceFlowers = function (flowerbed, n) {
-  let current = 0;
+  let sum = 0;
   const size = flowerbed.length;
   for (var i = 0; i <= size; i++) {
     if (i < size && flowerbed[i] == 0) {
-      current++;
-      if (i == 0) current++;
-      if (i == size - 1) current++;
+      sum++;
+      if (i == 0) sum++;
+      if (i == size - 1) sum++;
     } else {
-      n -= Math.trunc((current - 1) / 2);
+      // 数学归纳
+      n -= Math.trunc((sum - 1) / 2);
       if (n <= 0) return true;
-      current = 0;
+      sum = 0;
     }
   }
   return false;
