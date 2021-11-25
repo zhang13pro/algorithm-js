@@ -10,6 +10,13 @@
  * @return {string}
  */
 var largestNumber = function (nums) {
-  return nums.sort().join("").replace(/^0*/, "") || "0";
+  return (
+    nums
+      .sort(function (a, b) {
+        return b + "" + a - (a + "" + b);
+      })
+      .join("")
+      .replace(/^0*/, "") || "0"
+  );
 };
 // @lc code=end
